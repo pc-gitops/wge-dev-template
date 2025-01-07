@@ -1,6 +1,6 @@
-# Template for deploying WGE Cluster
+# Template for deploying K8s Cluster
 
-This repository contains the template for deploying a WGE cluster. Use this repository template to create a new repository and follow the instructions below to deploy a WGE cluster.
+This repository contains the template for deploying a K8s cluster. Use this repository template to create a new repository and follow the instructions below to deploy a K8s cluster.
 
 On a MacBook it is designed to use the Docker Kubernetes deployed from Docker Dashboard but can be used with any Kubernetes cluster. On Linux it will create a Kind cluster.
 
@@ -34,14 +34,10 @@ If you are using a MacBook start or reset the Kubernetes cluster using the Docke
 
 Copy the `resources/github-secrets.sh.sample` file to `resources/github-secrets.sh` and update the values for your GitHub organization.
 
-If you want to use OIDC to login to the WGE GUI you will need to configure your GitHub organization for OIDC and add the client keys to the `resources/github-secrets.sh` file. This is optional, the setup script will generate a random password for the `wge-admin` user and store it in the `resources/wge-admin-password.txt` file.
-
 ## Deploy
 
-To deploy the WGE cluster run the `setup.sh` script. This will create the WGE cluster and deploy the WGE GUI. If the script fails you can run it again to continue the deployment.
-
-Once Flux has deployed the WGE GUI you can login using the `wge-admin` user and the password in the `resources/wge-admin-password.txt` file or the OIDC login.
+Once Flux has deployed the cluster
 
 ## Destroy
 
-To destroy the WGE cluster run the `reset.sh` script. This will destroy the WGE cluster.
+To destroy the cluster run the `reset.sh` script. This will destroy the WGE cluster.
